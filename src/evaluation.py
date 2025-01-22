@@ -15,7 +15,7 @@ def evaluate_models_on_cpu():
     
     # Shuffle and select 1000 random samples from the dataset
     dataset = dataset.shuffle(seed=42)  # Setting a seed for reproducibility
-    test_texts = dataset['article'][:1000]  # (replace 11490 by smaller number if you would like to test on a smaller part of test set)
+    test_texts = dataset['article'][:100]  # (replace 100 by smaller number if you would like to test on a smaller part of test set)
     # Initialize results list
     results = []
     
@@ -123,7 +123,7 @@ def evaluate_models_on_cpu():
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    df_results.to_csv(r'D:\projects\summariserAI\quicknote-summarizer\src\results\evaluation_results_v2.csv', index=False)
+    df_results.to_csv(r'D:\projects\summariserAI\quicknote-summarizer\src\results\evaluation_results_v3.csv', index=False)
     
     return df_results
 
